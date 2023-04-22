@@ -41,7 +41,7 @@ for i in range(0 , no_of_enemies):
         enemyIMG.append(pygame.image.load('enemy.png'))
         enemyX.append(random.randint(0,736))
         enemyY.append(random.randint(50,150))
-        enemyX_change.append(1)
+        enemyX_change.append(0.2)
         enemyY_change.append(40)
 def enemies(no_of_enemies):
     for i in range(0 , no_of_enemies):
@@ -52,7 +52,7 @@ def enemies(no_of_enemies):
         enemyIMG.append(pygame.image.load('enemy.png'))
         enemyX.append(random.randint(0,736))
         enemyY.append(random.randint(50,150))
-        enemyX_change.append(1.4)
+        enemyX_change.append(0.2)
         enemyY_change.append(20)
 
 #Missile Setup
@@ -61,7 +61,7 @@ missile_resizedIMG = pygame.transform.scale(missileIMG , (32,32))
 missileX = 0
 missileY = 500
 missileX_change = 0
-missileY_change = 2.5
+missileY_change = 0.8
 missile_state = "ready"
 
 
@@ -127,9 +127,9 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerx_change = -1.5
+                playerx_change = -0.7
             if event.key == pygame.K_RIGHT:
-                playerx_change = 1.5
+                playerx_change = 0.7
             if event.key == pygame.K_SPACE:
                 if missile_state == "ready":
                     missileX = playerX
@@ -166,10 +166,10 @@ while running:
 
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
-            enemyX_change[i] = 1
+            enemyX_change[i] = 0.2
             enemyY[i] += enemyY_change[i]
         elif enemyX[i] >= 736:
-            enemyX_change[i]  = -1
+            enemyX_change[i]  = -0.2
             enemyY[i] += enemyY_change[i]
 
         # Collision checking
