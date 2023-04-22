@@ -1,3 +1,6 @@
 Requirements :
-Python - 3.7+
-Pygame - ANY
+  Python - 3.7+
+  Pygame - ANY
+
+Necessary:
+  All the Images in the Repository must be downloaded and pasted into the file directory where your code is situated.
